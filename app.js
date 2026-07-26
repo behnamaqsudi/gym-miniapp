@@ -2,17 +2,60 @@
 
 // دریافت اطلاعات از localStorage
 function getData() {
-    const defaultData = {
-        users: {},
-        exercises: [],
-        workoutPlans: [],
-        currentUser: null
-    };
-    
     const saved = localStorage.getItem('gymData');
     if (saved) {
         return JSON.parse(saved);
     }
+    
+    // دیتای پیش‌فرض تستی
+    const defaultData = {
+        users: {},
+        exercises: [
+            // تمرینات بانوان
+            { id: 1, name: 'شنا سوئدی', description: '۳ ست ۱۲ تایی', videoUrl: 'https://www.youtube.com/watch?v=IODxDxX7oi4', gender: 'female' },
+            { id: 2, name: 'اسکات با وزن بدن', description: '۳ ست ۱۵ تایی', videoUrl: 'https://www.youtube.com/watch?v=ultWZbUMPL8', gender: 'female' },
+            { id: 3, name: 'پلانک', description: '۳ ست ۳۰ ثانیه', videoUrl: 'https://www.youtube.com/watch?v=ASdvN_XEl_c', gender: 'female' },
+            { id: 4, name: 'لیفت باسن', description: '۳ ست ۱۵ تایی', videoUrl: 'https://www.youtube.com/watch?v=OUgsJ8-Vi0E', gender: 'female' },
+            { id: 5, name: 'کرانچ شکم', description: '۳ ست ۲۰ تایی', videoUrl: 'https://www.youtube.com/watch?v=X5WkzlIbkXo', gender: 'female' },
+            
+            // تمرینات آقایان
+            { id: 6, name: 'پرس سینه هالتر', description: '۴ ست ۱۰ تایی', videoUrl: 'https://www.youtube.com/watch?v=rT7DgCr-3pg', gender: 'male' },
+            { id: 7, name: 'زیربغل سیمکش', description: '۴ ست ۱۲ تایی', videoUrl: 'https://www.youtube.com/watch?v=CAwf7n6Luuc', gender: 'male' },
+            { id: 8, name: 'پرس سرشانه', description: '۳ ست ۱۰ تایی', videoUrl: 'https://www.youtube.com/watch?v=qEwKCR5JCog', gender: 'male' },
+            { id: 9, name: 'جلو بازو هالتر', description: '۳ ست ۱۲ تایی', videoUrl: 'https://www.youtube.com/watch?v=kwrGDa1KzkU', gender: 'male' },
+            { id: 10, name: 'اسکات هالتر', description: '۴ ست ۱۰ تایی', videoUrl: 'https://www.youtube.com/watch?v=ultWZbUMPL8', gender: 'male' },
+            { id: 11, name: 'ددلیفت', description: '۳ ست ۸ تایی', videoUrl: 'https://www.youtube.com/watch?v=op9kVnSso6Q', gender: 'male' },
+            { id: 12, name: 'پا ساق', description: '۴ ست ۲۰ تایی', videoUrl: 'https://www.youtube.com/watch?v=-M4-G8p8fmc', gender: 'male' }
+        ],
+        workoutPlans: [
+            // برنامه بانوان
+            { id: 101, day: 1, exerciseId: 1, gender: 'female', order: 1 },
+            { id: 102, day: 1, exerciseId: 2, gender: 'female', order: 2 },
+            { id: 103, day: 1, exerciseId: 3, gender: 'female', order: 3 },
+            { id: 104, day: 2, exerciseId: 4, gender: 'female', order: 1 },
+            { id: 105, day: 2, exerciseId: 5, gender: 'female', order: 2 },
+            { id: 106, day: 2, exerciseId: 3, gender: 'female', order: 3 },
+            { id: 107, day: 3, exerciseId: 1, gender: 'female', order: 1 },
+            { id: 108, day: 3, exerciseId: 2, gender: 'female', order: 2 },
+            { id: 109, day: 3, exerciseId: 4, gender: 'female', order: 3 },
+            
+            // برنامه آقایان
+            { id: 201, day: 1, exerciseId: 6, gender: 'male', order: 1 },
+            { id: 202, day: 1, exerciseId: 7, gender: 'male', order: 2 },
+            { id: 203, day: 1, exerciseId: 8, gender: 'male', order: 3 },
+            { id: 204, day: 1, exerciseId: 9, gender: 'male', order: 4 },
+            { id: 205, day: 2, exerciseId: 10, gender: 'male', order: 1 },
+            { id: 206, day: 2, exerciseId: 11, gender: 'male', order: 2 },
+            { id: 207, day: 2, exerciseId: 12, gender: 'male', order: 3 },
+            { id: 208, day: 3, exerciseId: 6, gender: 'male', order: 1 },
+            { id: 209, day: 3, exerciseId: 7, gender: 'male', order: 2 },
+            { id: 210, day: 3, exerciseId: 10, gender: 'male', order: 3 },
+            { id: 211, day: 3, exerciseId: 11, gender: 'male', order: 4 }
+        ],
+        currentUser: null
+    };
+    
+    localStorage.setItem('gymData', JSON.stringify(defaultData));
     return defaultData;
 }
 
