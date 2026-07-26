@@ -1,0 +1,283 @@
+/* استایل کلی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* صفحه‌ها */
+.page {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* هدر */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* دکمه بازگشت */
+.back-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* اطلاعات کاربر */
+.user-info {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+/* انتخاب جنسیت */
+.gender-select {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+.gender-select h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.gender-select button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: #fff;
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gender-select button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* روزهای تمرینی */
+.workout-days {
+    padding: 20px;
+}
+
+.workout-days h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.day-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+    color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: right;
+}
+
+.day-btn:hover {
+    transform: scale(1.02);
+}
+
+/* تمرینات */
+.exercise-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border-right: 4px solid #667eea;
+}
+
+.exercise-card h3 {
+    margin-bottom: 10px;
+    color: #38ef7d;
+}
+
+.exercise-card p {
+    color: #aaa;
+    margin: 5px 0;
+}
+
+.exercise-card a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.exercise-card a:hover {
+    text-decoration: underline;
+}
+
+/* پنل ادمین */
+.admin-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(240, 147, 251, 0.4);
+    transition: transform 0.2s;
+}
+
+.admin-btn:hover {
+    transform: scale(1.1);
+}
+
+.admin-section {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.admin-section h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #38ef7d;
+}
+
+.admin-section input,
+.admin-section select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+.admin-section input::placeholder {
+    color: #aaa;
+}
+
+.admin-section button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.admin-section button:hover {
+    transform: scale(1.02);
+}
+
+/* لیست تمرینات ادمین */
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+}
+
+.exercise-item span {
+    flex: 1;
+}
+
+.exercise-item button {
+    background: #f5576c;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* برنامه کامل */
+.plan-day {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.plan-day h4 {
+    color: #38ef7d;
+    margin-bottom: 10px;
+}
+
+.plan-exercise {
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+/* پیام خالی */
+.empty-msg {
+    text-align: center;
+    color: #aaa;
+    padding: 30px;
+}

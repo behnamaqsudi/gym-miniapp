@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGYM - باشگاه بدنسازی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- صفحه اصلی -->
+    <div id="home-page" class="page active">
+        <header>
+            <h1>🏋️ MyGYM</h1>
+            <p>باشگاه بدنسازی</p>
+        </header>
+        
+        <div class="user-info" id="user-info">
+            <p>سلام <span id="user-name">کاربر</span>!</p>
+            <p>جنسیت: <span id="user-gender">انتخاب نشده</span></p>
+        </div>
+        
+        <div class="gender-select" id="gender-select">
+            <h2>جنسیت خودت رو انتخاب کن:</h2>
+            <button onclick="selectGender('female')">👩 بانوان</button>
+            <button onclick="selectGender('male')">👨 آقایان</button>
+        </div>
+        
+        <div class="workout-days" id="workout-days" style="display:none;">
+            <h2>📅 برنامه تمرینی:</h2>
+            <div id="days-container"></div>
+        </div>
+    </div>
+    
+    <!-- صفحه تمرینات -->
+    <div id="workout-page" class="page">
+        <header>
+            <button class="back-btn" onclick="showPage('home-page')">→ بازگشت</button>
+            <h1 id="workout-title">تمرینات</h1>
+        </header>
+        
+        <div id="exercises-container"></div>
+    </div>
+    
+    <!-- صفحه ادمین -->
+    <div id="admin-page" class="page">
+        <header>
+            <button class="back-btn" onclick="showPage('home-page')">→ بازگشت</button>
+            <h1>🔧 پنل ادمین</h1>
+        </header>
+        
+        <div class="admin-section">
+            <h2>➕ اضافه کردن تمرین</h2>
+            <input type="text" id="exercise-name" placeholder="نام تمرین">
+            <input type="text" id="exercise-desc" placeholder="توضیحات (اختیاری)">
+            <input type="url" id="exercise-video" placeholder="لینک فیلم (اختیاری)">
+            <select id="exercise-gender">
+                <option value="female">👩 بانوان</option>
+                <option value="male">👨 آقایان</option>
+                <option value="both">👥 هر دو</option>
+            </select>
+            <button onclick="addExercise()">اضافه کردن</button>
+        </div>
+        
+        <div class="admin-section">
+            <h2>📋 لیست تمرینات</h2>
+            <div id="exercises-list"></div>
+        </div>
+        
+        <div class="admin-section">
+            <h2>📅 تنظیم برنامه</h2>
+            <input type="number" id="workout-day" placeholder="شماره روز" min="1">
+            <select id="workout-exercise"></select>
+            <button onclick="addWorkoutPlan()">اضافه به برنامه</button>
+        </div>
+        
+        <div class="admin-section">
+            <h2>📊 برنامه کامل</h2>
+            <div id="full-plan"></div>
+        </div>
+    </div>
+    
+    <!-- دکمه ادمین -->
+    <button class="admin-btn" onclick="showPage('admin-page')">🔧</button>
+    
+    <script src="app.js"></script>
+</body>
+</html>
