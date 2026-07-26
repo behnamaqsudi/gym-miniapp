@@ -1,9 +1,15 @@
 // ===== دیتابیس localStorage =====
 
+// نسخه دیتابیس (تغییر بدید تا دیتای جدید لود بشه)
+const DB_VERSION = '1.1';
+
 // دریافت اطلاعات از localStorage
 function getData() {
     const saved = localStorage.getItem('gymData');
-    if (saved) {
+    const savedVersion = localStorage.getItem('gymDataVersion');
+    
+    // اگه نسخه فرق داشت، دیتای جدید لود بشه
+    if (saved && savedVersion === DB_VERSION) {
         return JSON.parse(saved);
     }
     
@@ -56,12 +62,14 @@ function getData() {
     };
     
     localStorage.setItem('gymData', JSON.stringify(defaultData));
+    localStorage.setItem('gymDataVersion', DB_VERSION);
     return defaultData;
 }
 
 // ذخیره اطلاعات در localStorage
 function saveData(data) {
     localStorage.setItem('gymData', JSON.stringify(data));
+    localStorage.setItem('gymDataVersion', DB_VERSION);
 }
 
 // ===== توابع کاربر =====
